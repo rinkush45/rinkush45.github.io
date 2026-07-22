@@ -1,0 +1,114 @@
+.education {
+  background: var(--surface);
+  padding-bottom: 10rem;
+}
+
+.header {
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: all 0.7s ease;
+}
+
+.header.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.heading {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  letter-spacing: -0.03em;
+}
+
+.headingAccent {
+  color: var(--primary-neon);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardBody {
+  padding: 1.75rem;
+  flex: 1;
+}
+
+.institution {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--on-surface);
+  margin-bottom: 0.25rem;
+}
+
+.degree {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--primary-neon);
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--on-surface-variant);
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.metaIcon {
+  color: var(--primary-neon);
+  opacity: 0.8;
+}
+
+.score {
+  border-top: 1px solid var(--outline-variant);
+  padding-top: 1.25rem;
+  margin-top: auto;
+}
+
+.scoreLabel {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--on-surface-variant);
+  letter-spacing: 0.12em;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.scoreValue {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--on-surface);
+}
+
+.scoreTotal {
+  font-size: 0.85rem;
+  opacity: 0.5;
+  font-weight: 400;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

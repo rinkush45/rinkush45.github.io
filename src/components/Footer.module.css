@@ -1,0 +1,130 @@
+.footer {
+  background: var(--surface);
+  position: relative;
+}
+
+.dividerLine {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,255,65,0.2), rgba(0,212,255,0.1), transparent);
+  margin-bottom: 0;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.75rem 0;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+
+.logoGrp {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.logoIcon {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 255, 65, 0.15);
+  background: rgba(0, 255, 65, 0.03);
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--on-surface);
+  letter-spacing: -0.01em;
+}
+
+.logoAccent {
+  color: var(--primary-neon);
+}
+
+.copy {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--on-surface-variant);
+  letter-spacing: 0.04em;
+}
+
+/* Center */
+.systemInfo {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--on-surface-variant);
+  letter-spacing: 0.06em;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--primary-neon);
+  box-shadow: 0 0 4px var(--primary-neon);
+}
+
+.dotSecondary {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--secondary);
+  box-shadow: 0 0 4px var(--secondary);
+}
+
+.dotTertiary {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--tertiary);
+  box-shadow: 0 0 4px var(--tertiary);
+}
+
+/* Right */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.footerLink {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--on-surface-variant);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.2s ease;
+}
+
+.footerLink:hover {
+  color: var(--primary);
+}
+
+@media (max-width: 900px) {
+  .inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.25rem;
+  }
+
+  .systemInfo {
+    justify-content: center;
+  }
+}

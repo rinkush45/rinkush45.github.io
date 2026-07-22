@@ -1,0 +1,165 @@
+.about {
+  background: var(--surface);
+  position: relative;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,255,65,0.2), transparent);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.inner.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Left */
+.heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.03em;
+  margin-bottom: 2rem;
+  line-height: 1.1;
+}
+
+.headingAccent {
+  color: var(--primary-neon);
+}
+
+.bioCard {
+  background: var(--surface-low);
+  border: 1px solid var(--outline-variant);
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.bioContent {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 0.95rem;
+  color: var(--on-surface-variant);
+  line-height: 1.75;
+}
+
+.accent {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.accentSecondary {
+  color: var(--secondary);
+  font-weight: 500;
+}
+
+.socialRow {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.875rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--on-surface-variant);
+  text-decoration: none;
+  border: 1px solid var(--outline-variant);
+  transition: all 0.2s ease;
+  letter-spacing: 0.04em;
+}
+
+.socialLink:hover {
+  color: var(--primary);
+  border-color: rgba(0,255,65,0.4);
+  background: rgba(0,255,65,0.06);
+}
+
+/* Right */
+.pillarsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pillar {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.pillar:hover {
+  background: rgba(30, 30, 30, 0.9);
+  transform: translateX(4px);
+}
+
+.pillarIcon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  border: 1px solid;
+}
+
+.pillarIcon_primary {
+  color: var(--primary);
+  border-color: rgba(0,255,65,0.3);
+  background: rgba(0,255,65,0.05);
+}
+
+.pillarIcon_secondary {
+  color: var(--secondary);
+  border-color: rgba(0,212,255,0.3);
+  background: rgba(0,212,255,0.05);
+}
+
+.pillarIcon_tertiary {
+  color: var(--tertiary);
+  border-color: rgba(157,0,255,0.3);
+  background: rgba(157,0,255,0.05);
+}
+
+.pillarTitle {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--on-surface);
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.01em;
+}
+
+.pillarDesc {
+  font-size: 0.82rem;
+  color: var(--on-surface-variant);
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}

@@ -1,0 +1,180 @@
+.page {
+  padding-top: 120px;
+  padding-bottom: 60px;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.bgElements {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(circle at top right, rgba(0, 252, 64, 0.05), transparent 40%),
+              radial-gradient(circle at bottom left, rgba(196, 127, 255, 0.05), transparent 40%);
+}
+
+.header {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--on-surface);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.headingAccent {
+  color: var(--primary);
+}
+
+.subheading {
+  color: var(--on-surface-variant);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.backContainer {
+  margin-bottom: 2rem;
+}
+
+/* Projects grid reused structure from ProjectsSection but unconstrained */
+.projectsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Duplicating card styles from ProjectsSection for independence */
+.projectCard {
+  padding: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.projectCard:hover {
+  transform: translateX(8px);
+  border-color: rgba(0, 255, 65, 0.3);
+  box-shadow: 0 0 30px rgba(0, 255, 65, 0.05);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.category {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--on-surface-variant);
+  letter-spacing: 0.05em;
+}
+
+.projectTitle {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--on-surface);
+  margin-bottom: 1rem;
+}
+
+.tagRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.expandIcon {
+  color: var(--primary);
+  font-size: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.expandIcon.expanded {
+  transform: rotate(90deg);
+}
+
+.details {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  animation: slideRightWipe 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.detailBlock {
+  margin-bottom: 1.5rem;
+}
+
+.detailLabel {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.1em;
+}
+
+.detailText {
+  color: var(--on-surface-variant);
+  line-height: 1.6;
+}
+
+.impactList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.impactItem {
+  color: var(--on-surface);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.impactCheck {
+  color: var(--primary);
+}
+
+@keyframes slideRightWipe {
+  0% {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+    transform: translateX(-15px);
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: translateX(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .projectsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+  }
+  
+  .details {
+    grid-column: 1 / -1;
+  }
+}
